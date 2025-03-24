@@ -5,4 +5,3 @@ function arrayCheck(arr) {
 }
 
 module.exports = arrayCheck;
-// export { arrayCheck };

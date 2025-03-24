@@ -1,9 +1,6 @@
 const getProp = require("../../objects/utils/getProp/getProp");
 const isMatch = require("../isMatch/isMatch");
 const isPlainObject = require("../isPlainObject/isPlainObject");
-// import { getProp } from "../objects/utils/getProp";
-// import { isMatch } from "./isMatch";
-// import { isPlainObject } from "./isPlainObject";
 
 function setPredicate(predicate) {
   if (typeof predicate === "function") {
@@ -43,4 +40,3 @@ function setPredicate(predicate) {
 }
 
 module.exports = setPredicate;
-// export { setPredicate };

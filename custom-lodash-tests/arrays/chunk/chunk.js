@@ -1,7 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const push = require("../utils/push/push");
-// import { arrayCheck } from "../utils/arrayCheck/arrayCheck";
-// import { push } from "../utils/push/push";
 
 function chunk(array, size = 1) {
   arrayCheck(array);
@@ -37,4 +35,3 @@ function chunk(array, size = 1) {
 }
 
 module.exports = chunk;
-// export { chunk };

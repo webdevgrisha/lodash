@@ -1,6 +1,6 @@
-import { getProp } from "../utils/getProp";
-import { objectCheck } from "../utils/objectCheck";
-import { setProp } from "../utils/setProp";
+const getProp = require('../utils/getProp/getProp');
+const objectCheck = require('../utils/objectCheck/objectCheck');
+const setProp = require('../utils/setProp/setProp');
 
 function pick(object, ...paths) {
   objectCheck(object);
@@ -19,4 +19,4 @@ function pick(object, ...paths) {
   return newObj;
 }
 
-export { pick };
+module.exports = pick;

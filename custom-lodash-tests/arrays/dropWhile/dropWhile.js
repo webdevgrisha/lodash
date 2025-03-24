@@ -1,9 +1,6 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const setPredicate = require("../../utils/setPredicate/setPredicate");
 const drop = require("../drop/drop");
-// import { arrayCheck } from "../utils/arrayCheck";
-// import { setPredicate } from "../../utils/setPredicate";
-// import { drop } from "../drop/drop";
 
 function dropWhile(array, predicate) {
   arrayCheck(array);
@@ -27,4 +24,3 @@ function dropWhile(array, predicate) {
 }
 
 module.exports = dropWhile;
-// export { dropWhile };

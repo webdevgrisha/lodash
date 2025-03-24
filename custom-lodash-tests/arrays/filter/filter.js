@@ -1,9 +1,6 @@
 const isPlainObject = require("../../utils/isPlainObject/isPlainObject");
 const setPredicate = require("../../utils/setPredicate/setPredicate");
 const push = require("../utils/push/push");
-// import { isPlainObject } from "../../utils/isPlainObject";
-// import { setPredicate } from "../../utils/setPredicate";
-// import { push } from "../utils/push";
 
 function filter(collection, predicate) {
   if (!(Array.isArray(collection) || isPlainObject(collection))) {
@@ -37,5 +34,5 @@ function filter(collection, predicate) {
   return filterArr;
 }
 
-// export { filter };
+
 module.exports = filter;

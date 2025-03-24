@@ -1,4 +1,4 @@
-import { objectCheck } from "../utils/objectCheck";
+const objectCheck = require("../utils/objectCheck/objectCheck");
 
 function omit(object, ...paths) {
   objectCheck(object);
@@ -12,4 +12,4 @@ function omit(object, ...paths) {
   return objCopy;
 }
 
-export { omit };
+module.exports = omit;

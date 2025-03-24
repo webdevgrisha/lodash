@@ -3,4 +3,3 @@ function isObject(value) {
 }
 
 module.exports = isObject;
-// export { isObject };

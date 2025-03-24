@@ -1,5 +1,5 @@
-import { push } from "../../arrays/utils/push";
-import { isObject } from "../../utils/isObject";
+const push = require("../../arrays/utils/push/push");
+const isObject = require("../../utils/isObject/isObject");
 
 function toPairs(obj) {
   if (!isObject(obj)) {

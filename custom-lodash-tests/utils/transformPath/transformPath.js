@@ -15,5 +15,4 @@ function transformPath(path) {
   return path;
 }
 
-// export { transformPath };
 module.exports = transformPath;

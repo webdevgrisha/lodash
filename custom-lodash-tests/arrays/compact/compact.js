@@ -1,7 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const push = require("../utils/push/push");
-// import { arrayCheck } from "../utils/arrayCheck";
-// import { push } from "../utils/push";
 
 function compact(array) {
   arrayCheck(array);
@@ -18,4 +16,3 @@ function compact(array) {
 }
 
 module.exports = compact;
-// export { compact };

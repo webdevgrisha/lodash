@@ -1,7 +1,6 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const find = require("../find/find");
 const isMatch = require("../../utils/isMatch/isMatch");
-// import { find } from "../find/find";
 
 function includes(collection, value, fromIndex = 0) {
   arrayCheck(collection);
@@ -29,4 +28,4 @@ function includes(collection, value, fromIndex = 0) {
 }
 
 module.exports = includes;
-// export { includes };
+

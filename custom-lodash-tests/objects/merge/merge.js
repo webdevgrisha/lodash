@@ -1,5 +1,5 @@
-import { isObject } from "../../utils/isObject";
-import { objectCheck } from "../utils/objectCheck";
+const isObject = require('../../utils/isObject/isObject');
+const objectCheck = require('../utils/objectCheck/objectCheck');
 
 function merge(object, ...sources) {
   objectCheck(object);
@@ -30,4 +30,4 @@ function merge(object, ...sources) {
   return object;
 }
 
-export { merge };
+module.exports = merge;

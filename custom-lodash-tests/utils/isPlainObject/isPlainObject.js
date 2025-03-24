@@ -10,4 +10,4 @@ function isPlainObject(obj) {
 
 
 module.exports = isPlainObject;
-// export { isPlainObject };
+

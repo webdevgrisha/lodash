@@ -1,7 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const setPredicate = require("../../utils/setPredicate/setPredicate");
-// import { arrayCheck } from "../utils/arrayCheck";
-// import { setPredicate } from "../../utils/setPredicate";
 
 function find(collection, predicate, fromIndex = 0) {
   arrayCheck(collection);
@@ -27,4 +25,3 @@ function find(collection, predicate, fromIndex = 0) {
 }
 
 module.exports = find;
-// export { find };

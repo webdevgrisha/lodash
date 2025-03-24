@@ -1,4 +1,4 @@
-import { selectBy } from "../utils/selectBy";
+const selectBy = require('../utils/selectBy/selectBy');
 
 function omitBy(object, predicate) {
   const condition = (value) => !value;
@@ -6,4 +6,4 @@ function omitBy(object, predicate) {
   return selectBy(object, predicate, condition);
 }
 
-export { omitBy };
+module.exports = omitBy;

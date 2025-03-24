@@ -1,7 +1,6 @@
 const isPrimetive = require("../isPrimetive/isPrimetive");
 const isObject = require("../isObject/isObject");
 const isPlainObject = require("../isPlainObject/isPlainObject");
-// import { isObject } from "./isObject";
 
 function isMatch(object, source) {
   if (Number.isNaN(object) && Number.isNaN(source)) return true;
@@ -52,4 +51,3 @@ function isMatch(object, source) {
 }
 
 module.exports = isMatch;
-// export { isMatch };

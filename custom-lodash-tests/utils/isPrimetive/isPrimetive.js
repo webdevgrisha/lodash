@@ -11,4 +11,4 @@ function isPrimetive(value) {
 }
 
 module.exports = isPrimetive;
-// export { isPrimetive };
+

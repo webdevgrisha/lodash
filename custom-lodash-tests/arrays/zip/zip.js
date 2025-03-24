@@ -1,4 +1,4 @@
-import { map } from "../map/map";
+const map = require('../map/map');
 
 function zip(...arrays) {
   const arraysLength = map(arrays, (value) => {
@@ -16,4 +16,4 @@ function zip(...arrays) {
   return newArr;
 }
 
-export { zip };
+module.exports = zip;

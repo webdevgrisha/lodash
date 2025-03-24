@@ -7,4 +7,4 @@ function pickLast(arr) {
 }
 
 module.exports = pickLast;
-// export { pickLast };
+

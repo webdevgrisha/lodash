@@ -1,6 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const push = require("../utils/push/push");
-// import { push } from "../utils/push";
 
 function take(array, n = 1) {
   arrayCheck(array);
@@ -15,4 +14,3 @@ function take(array, n = 1) {
 }
 
 module.exports = take;
-// export { take };

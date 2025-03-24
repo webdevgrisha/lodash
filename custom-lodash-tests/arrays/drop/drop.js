@@ -1,7 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const push = require("../utils/push/push");
-// import { arrayCheck } from "../utils/arrayCheck";
-// import { push } from "../utils/push";
 
 function drop(array, n = 1) {
   arrayCheck(array);

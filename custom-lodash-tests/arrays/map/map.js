@@ -1,7 +1,5 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const push = require("../utils/push/push");
-// import { arrayCheck } from "../utils/arrayCheck";
-// import { push } from "../utils/push";
 
 function map(collection, iteratee = (value) => value) {
   arrayCheck(collection);
@@ -18,4 +16,3 @@ function map(collection, iteratee = (value) => value) {
 }
 
 module.exports = map;
-// export { map };
