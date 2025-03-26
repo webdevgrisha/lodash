@@ -91,6 +91,15 @@ describe("'chunk' function tests:", () => {
     }
   );
 
+  test("Should correctly work with decimal numbers", () => {
+    const arr = ["a", "b", "c", "d"];
+
+
+    expect(chunk(arr, 1.1)).toStrictEqual([["a"], ["b"], ["c"], ["d"]]);
+    expect(chunk(arr, 1.9)).toStrictEqual([["a"], ["b"], ["c"], ["d"]]);
+    expect(chunk(arr, 2.5)).toStrictEqual([["a", "b"], ["c", "d"]]);
+  });
+
   test("Should not change the original array", () => {
     const arr = ["a", "b", "c", "d"];
     const arrCopy = [...arr];

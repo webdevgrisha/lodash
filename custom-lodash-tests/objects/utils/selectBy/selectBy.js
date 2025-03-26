@@ -1,11 +1,10 @@
-import { setPredicate } from "../../utils/setPredicate";
-import { add } from "../setProp/setProp";
-import { deepCopy } from "../deepCopy";
-import { objectCheck } from "./objectCheck";
+const objectCheck = require("../objectCheck/objectCheck");
+const setPredicate = require("../../../utils/setPredicate/setPredicate");
+const deepCopy = require("../deepCopy/deepCopy");
+const setProp = require("../setProp/setProp");
 
 function selectBy(object, predicate, condition) {
   objectCheck(object);
-
   predicate = setPredicate(predicate);
 
   const newObj = {};
@@ -16,11 +15,11 @@ function selectBy(object, predicate, condition) {
     if (condition(result)) {
       const value = deepCopy(object[key]);
 
-      add(newObj, key, value);
+      setProp(newObj, key, value);
     }
   }
 
   return newObj;
 }
 
-export { selectBy };
+module.exports = selectBy;

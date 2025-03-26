@@ -40,4 +40,44 @@ describe("'map' function tests:'", () => {
     expect(map([1, 2, 3])).toStrictEqual([1, 2, 3]);
   });
 
+  test("Should work correctly for square function, on array of numbers", () => {
+    const arr = [1, 2, 3, 4];
+    const iteratee = (currValue) => Math.pow(currValue, 2);
+
+    expect(map(arr, iteratee)).toEqual([1, 4, 9, 16]);
+  });
+
+  test("Should work correctly for square function, on array of objects", () => {
+    const arr = [{n: 1}, {n: 2}, {n: 3}, {n: 4}];
+    const iteratee = (currValue) => Math.pow(currValue.n, 2);
+
+    expect(map(arr, iteratee)).toEqual([1, 4, 9, 16]);
+  });
+
+  test("Should currectly map, for the `_.property` iteratee shorthand.", () => {
+    const users = [
+      { 'user': 'barney' },
+      { 'user': 'fred' }
+    ];
+
+    expect(map(users, 'user')).toEqual(['barney', 'fred']);
+  });
+
+  test("Should currectly map, for the `_.property` iteratee shorthand on array with object an non object elemets.", () => {
+    const users = [
+      { 'user': 'barney' },
+      { 'user': 'fred' },
+      1,
+      "b",
+      true
+    ];
+
+    expect(map(users, 'user')).toEqual(['barney', 'fred', undefined, undefined, undefined]);
+  });
+
+  test("Should currectly map, for the `_.property` iteratee shorthand on array with no object elemts.", () => {
+    const arr = [1, 2, 3, 4];
+
+    expect(map(arr, 'user')).toEqual([undefined, undefined, undefined, undefined]);
+  });
 });

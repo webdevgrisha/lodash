@@ -1,17 +1,17 @@
-const isPrimetive = require("../isPrimetive/isPrimetive");
+const isPrimitive = require("../isPrimitive/isPrimitive");
 const isObject = require("../isObject/isObject");
 const isPlainObject = require("../isPlainObject/isPlainObject");
 
 function isMatch(object, source) {
   if (Number.isNaN(object) && Number.isNaN(source)) return true;
 
-  if (isPrimetive(object) || isPrimetive(source)) {
+  if (isPrimitive(object) || isPrimitive(source)) {
     return object === source;
   }
 
   if (object === source) return true;
 
-  if(!Object.keys(source).length && isPlainObject(source)) return true;
+  if (!Object.keys(source).length && isPlainObject(source)) return true;
 
   if (Array.isArray(object) !== Array.isArray(source)) return false;
 

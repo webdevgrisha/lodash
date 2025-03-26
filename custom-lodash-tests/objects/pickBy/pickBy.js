@@ -1,4 +1,4 @@
-const selectBy = require('../utils/selectBy');
+const selectBy = require('../utils/selectBy/selectBy');
 
 function pickBy(object, predicate) {
   const condition = (value) => value;

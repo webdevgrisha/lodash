@@ -1,5 +1,4 @@
 const isPlainObject = require('../../../utils/isPlainObject/isPlainObject')
-// import { isPlainObject } from "../../utils/isPlainObject";
 
 function objectCheck(obj) {
   if (!isPlainObject(obj)) {
@@ -8,4 +7,3 @@ function objectCheck(obj) {
 }
 
 module.exports = objectCheck;
-// export { objectCheck };

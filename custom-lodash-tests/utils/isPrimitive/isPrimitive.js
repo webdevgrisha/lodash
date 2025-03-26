@@ -1,4 +1,4 @@
-function isPrimetive(value) {
+function isPrimitive(value) {
   const valueType = typeof value;
 
   if (value === null) return true;
@@ -10,5 +10,5 @@ function isPrimetive(value) {
   return true;
 }
 
-module.exports = isPrimetive;
+module.exports = isPrimitive;
 

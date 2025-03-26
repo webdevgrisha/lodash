@@ -2,16 +2,18 @@ const getProp = require("./getProp");
 
 describe("'getProp' function tests:", () => {
   test("Should return false for all not object or array data.", () => {
-    expect(getProp("")).toBeFalsy();
-    expect(getProp(10)).toBeFalsy();
-    expect(getProp(true)).toBeFalsy();
-    expect(getProp(null)).toBeFalsy();
-    expect(getProp(undefined)).toBeFalsy();
-    expect(getProp(new Date())).toBeFalsy();
-    expect(getProp(new RegExp())).toBeFalsy();
-    expect(getProp(new Map())).toBeFalsy();
-    expect(getProp(new Set())).toBeFalsy();
-    expect(getProp(function () {})).toBeFalsy();
+    const symbol = Symbol();
+    const path = "a.b";
+    expect(getProp("", path, symbol)).toBe(symbol);
+    expect(getProp(10, path, symbol)).toBe(symbol);
+    expect(getProp(true, path, symbol)).toBe(symbol);
+    expect(getProp(null, path, symbol)).toBe(symbol);
+    expect(getProp(undefined, path, symbol)).toBe(symbol);
+    expect(getProp(new Date(), path, symbol)).toBe(symbol);
+    expect(getProp(new RegExp(), path, symbol)).toBe(symbol);
+    expect(getProp(new Map(), path, symbol)).toBe(symbol);
+    expect(getProp(new Set(), path, symbol)).toBe(symbol);
+    expect(getProp(function () {}, path, symbol)).toBe(symbol);
   });
 
   test("Return value using string simple string path: 'a.b.c'", () => {

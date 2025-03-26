@@ -1,12 +1,10 @@
 const isPlainObject = require("../../../utils/isPlainObject//isPlainObject.js");
 const transformPath = require("../../../utils/transformPath/transformPath.js");
 const isObject = require("../../../utils/isObject/isObject.js");
-// import { isObject } from "../../utils/isObject/isObject.js";
-// import { transformPath } from "../../utils/transformPath/transformPath.js";
 
 function getProp(object, path, defaultValue = undefined) {
   if (!(Array.isArray(object) || isPlainObject(object))) {
-    return false;
+    return defaultValue;
   }
 
   path = transformPath(path);
@@ -34,4 +32,3 @@ function getProp(object, path, defaultValue = undefined) {
 }
 
 module.exports = getProp;
-// export { getProp };

@@ -1,4 +1,5 @@
 const isObject = require('../../utils/isObject/isObject');
+const deepCopy = require('../utils/deepCopy/deepCopy');
 const objectCheck = require('../utils/objectCheck/objectCheck');
 
 function merge(object, ...sources) {
@@ -7,19 +8,19 @@ function merge(object, ...sources) {
   for (let source of sources) {
     if (!isObject(source)) continue;
 
-    for (let key in Object.keys(source)) {
+    for (let key of Object.keys(source)) {
       const sourceValue = source[key];
       const objectValue = object[key];
 
       if (sourceValue === undefined) continue;
 
       if (Array.isArray(sourceValue) && Array.isArray(objectValue)) {
-        object[key] = [...objectValue, ...sourceValue];
+        object[key] = [...deepCopy(objectValue), ...deepCopy(sourceValue)];
         continue;
       }
 
       if (isObject(sourceValue) && isObject(objectValue)) {
-        merge(objectValue, structuredClone(sourceValue));
+        merge(objectValue, deepCopy(sourceValue));
         continue;
       }
 

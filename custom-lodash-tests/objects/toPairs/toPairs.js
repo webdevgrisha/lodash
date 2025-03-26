@@ -6,13 +6,11 @@ function toPairs(obj) {
     throw Error('Value must be type of "object');
   }
 
-  if (Array.isArray(obj)) return obj;
-
   if (obj instanceof Map || obj instanceof Set) {
     return Array.from(obj.entries());
   }
 
-  const objOwnKeys = Reflect.ownKeys(obj);
+  const objOwnKeys = Object.keys(obj);
 
   const arrPairs = [];
 
@@ -25,4 +23,4 @@ function toPairs(obj) {
   return arrPairs;
 }
 
-export { toPairs };
+module.exports = toPairs;

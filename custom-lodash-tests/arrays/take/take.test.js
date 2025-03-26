@@ -48,6 +48,12 @@ describe("'take' function tests:'", () => {
     expect(take([1, 2, 3], 5)).toStrictEqual([1, 2, 3]);
   });
 
+  test("Should work currectly for decimal numbers", () => {
+    expect(take([1, 2, 3, 4], 1.5)).toStrictEqual([1]);
+    expect(take([1, 2, 3, 4], 2.1)).toStrictEqual([1, 2]);
+    expect(take([1, 2, 3, 4], 3.9)).toStrictEqual([1, 2, 3]);
+  });
+
   test("Should return an empty array when 'n' is 0", () => {
     expect(take([1, 2, 3], 0)).toStrictEqual([]);
   });

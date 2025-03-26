@@ -1,16 +1,14 @@
+const chunk = require("../chunk/chunk");
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
-const push = require("../utils/push/push");
 
 function take(array, n = 1) {
   arrayCheck(array);
 
-  const takeArr = [];
+  const minLen = Math.min(n, array.length);
 
-  for (let i = 0; i < n && i < array.length; i++) {
-    push(takeArr, array[i]);
-  }
+  const takeArr = chunk(array, minLen);
 
-  return takeArr;
+  return takeArr.length ? takeArr[0] : takeArr;
 }
 
 module.exports = take;

@@ -1,3 +1,21 @@
+// function globalObjectSelling(originalObj, objCopy) {
+//     const isSealed = Object.isSealed(originalObj);
+//     const isExtensible = Object.isExtensible(originalObj);
+//     const isFrozen = Object.isFrozen(originalObj);
+
+//     if (isSealed) {
+//       Object.seal(objCopy);
+//     }
+
+//     if (!isExtensible) {
+//       Object.preventExtensions(objCopy);
+//     }
+
+//     if (isFrozen) {
+//       Object.freeze(objCopy);
+//     }
+//   }
+
 function deepCopy(obj) {
   if (typeof obj === "symbol") {
     return Symbol(obj.description);
@@ -9,7 +27,7 @@ function deepCopy(obj) {
     const prototype = Object.getPrototypeOf(obj);
     Object.setPrototypeOf(dateCopy, prototype);
 
-    globalObjectSelling(obj, dateCopy);
+    //   globalObjectSelling(obj, dateCopy);
 
     return dateCopy;
   }
@@ -25,11 +43,11 @@ function deepCopy(obj) {
 
       Object.defineProperty(arrayCopy, i, {
         ...descriptors,
-        value: copy(obj[i]),
+        value: deepCopy(obj[i]),
       });
     }
 
-    globalObjectSelling(obj, arrayCopy);
+    //   globalObjectSelling(obj, arrayCopy);
 
     return arrayCopy;
   }
@@ -47,12 +65,14 @@ function deepCopy(obj) {
       if (descriptor.get || descriptor.set) {
         Object.defineProperty(objCopy, key, descriptor);
       } else {
-        Object.defineProperty(objCopy, copy(key), {
+        Object.defineProperty(objCopy, deepCopy(key), {
           ...descriptor,
-          value: copy(value),
+          value: deepCopy(value),
         });
       }
     }
+
+    //   globalObjectSelling(obj, objCopy);
 
     return objCopy;
   }
@@ -60,4 +80,6 @@ function deepCopy(obj) {
   return obj;
 }
 
-export { deepCopy };
+module.exports = deepCopy;
+// module.exports = deepCopy;
+// export { copy };

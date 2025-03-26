@@ -1,31 +1,31 @@
 const arrayCheck = require("../utils/arrayCheck/arrayCheck");
 const find = require("../find/find");
-const isMatch = require("../../utils/isMatch/isMatch");
+const filter = require("../filter/filter");
+
+const NaNCheck = (value, currValue) =>
+  Number.isNaN(currValue) === Number.isNaN(value);
+const otherCheck = (value, currValue) => currValue === value;
 
 function includes(collection, value, fromIndex = 0) {
   arrayCheck(collection);
 
   if (!collection.length) return false;
 
-  // получается нельзя переиспользовать
+  if (value === undefined) {
+    const undefindArr = filter(collection, (value) => value === undefined);
+
+    return !!undefindArr.length;
+  }
+
+  const compare = Number.isNaN(value) ? NaNCheck : otherCheck;
+
   const result = find(
     collection,
-    (currValue) => {
-      if (Number.isNaN(currValue) && Number.isNaN(value)) {
-        return Number.isNaN(currValue) === Number.isNaN(value);
-      }
-
-      return currValue === value;
-    },
+    (currValue) => compare(value, currValue),
     fromIndex
   );
 
-  if (result === undefined && value !== undefined) {
-    return false;
-  }
-
-  return true;
+  return result !== undefined ? true : false;
 }
 
 module.exports = includes;
-

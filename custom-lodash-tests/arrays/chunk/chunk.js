@@ -8,6 +8,8 @@ function chunk(array, size = 1) {
     throw Error("Size must be a number.");
   }
 
+  size = Math.floor(size);
+
   if (size <= 0 || Number.isNaN(size)) return [];
 
   const chunkArr = [];

@@ -1,4 +1,4 @@
-const isPrimetive = require('./isPrimetive');
+const isPrimetive = require('./isPrimitive');
 
 describe("'isPrimetive' function tests:", () => {
     test('Should return true for primetive data types', () => {

@@ -2,10 +2,6 @@ const objectCheck = require("../objectCheck/objectCheck");
 const isObject = require("../../../utils/isObject/isObject");
 const transformPath = require("../../../utils/transformPath/transformPath");
 const pickLast = require("../../../arrays/utils/pickLast/pickLast");
-// import { objectCheck } from "../objectCheck";
-// import { isObject } from "../../utils/isObject";
-// import { transformPath } from "../../utils/transformPath";
-// import { pickLast } from "../../arrays/utils/pickLast";
 
 function deleteProp(object, path) {
   objectCheck(object);
@@ -38,4 +34,3 @@ function deleteProp(object, path) {
 }
 
 module.exports = deleteProp;
-// export { deleteProp };
